@@ -130,15 +130,15 @@ def split_df(df):
 
 	df_negative = df[df['feedback'] == -1]
 
-	df_negative.to_csv('static/negative.csv')
+	df_negative.to_csv('static/negative.csv', index= False)
 
 	df_neutral = df[df['feedback'] == 0]
 
-	df_neutral.to_csv('static/neutral.csv')
+	df_neutral.to_csv('static/neutral.csv', index= False)
 
 	df_positive = df[df['feedback'] == 1]
 
-	df_positive.to_csv('static/positive.csv')
+	df_positive.to_csv('static/positive.csv', index= False)
 
 	data = {
 		'df_negative' : df_negative,

@@ -10,25 +10,6 @@ UPLOAD_PATH = 'static/'
 
 FILE_NAME = 'user-feedback.csv'
 
-@app.route('/upload', methods=['POST'])
-def upload_files():
-
-    uploaded_file = request.files['file']
-
-    filename = secure_filename(uploaded_file.filename)
-
-    fileext = filename.split('.')[-1]
-
-    if filename != '' and fileext == 'csv':
-
-        uploaded_file.save(os.path.join(UPLOAD_PATH, FILE_NAME))
-
-    else:
-
-        return "Please send CSV File", 500
-
-    return '', 204
-
 @app.route('/')
 def home():
 
