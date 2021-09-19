@@ -6,15 +6,12 @@ import nltk.data
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
-
-#remove URLs
 def fix_URL(userImage):
 
    url = re.compile(r'https?://\S+|www\.\S+')
 
    return url.sub(r'', userImage)
 
-#remove emojies
 def remove_emojis(data):
 
    emoj = re.compile("["
@@ -48,18 +45,23 @@ def remove_punct(content):
 
    return content.translate(data)
 
+def clean_text(row):
 
+   content = row['content']
 
-def clean_text(text, words = None):
+   all_words = content.split()
 
-    stop_words = stopwords.words('english')
+   stop_words = stopwords.words('english')
 
-    words = [word for word in words if not word in stop_words]
+   raw_words_list = [word for word in all_words if not word in stop_words]
 
-    tokens = [word.lower() for word in word_tokenize(text)]
+   raw_words = ' '.join(raw_words_list)
 
-    return tokens
+   row['raw_words'] = raw_words
 
+   print(row['raw_words'])
+
+   return row
 
 def start():
 
@@ -76,25 +78,16 @@ def start():
    #drop NaN values that have all rows empty
    data_dropped = df.dropna(how = "all")
 
-   #heatmap
-   #sns.heatmap(data.isnull(), yticklabels=False)
-
-   #remove URLs
-   # df['userImage'] = df['userImage'].apply(fix_URL)
-
-   #remove emojies
    df['content'] = df['content'].apply(remove_emojis)
 
    #remove punctuations
    df['content'] = df['content'].apply(remove_punct)
-   clean_text
 
-   df['content'].dropna()
+   df = df.apply(clean_text, axis=1)
+
+   df = df.dropna()
 
    df.to_csv("result.csv")
-
-
-
 
 if __name__=='__main__':
 
