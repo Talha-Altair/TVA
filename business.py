@@ -7,12 +7,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-def fix_URL(userImage):
-
-	url = re.compile(r'https?://\S+|www\.\S+')
-
-	return url.sub(r'', userImage)
-
 def remove_emojis(data):
 
 	emoj = re.compile("["
@@ -59,9 +53,7 @@ def clean_text(row):
 	raw_words = ' '.join(raw_words_list)
 
 	row['raw_words'] = raw_words
-
-	print(row['raw_words'])
-
+	
 	return row
 
 def prepocess():
@@ -73,8 +65,6 @@ def prepocess():
 	df = pd.read_csv('static/user-feedback.csv', na_values = missing_value)
 
 	df = df[["userName", "content", "score", "thumbsUpCount"]]
-
-	data_dropped = df.dropna(how = "all")
 
 	df['content'] = df['content'].apply(remove_emojis)
 
@@ -99,9 +89,31 @@ def sentiment_scores(row):
     
     return row
 
+def assign_feedback(row):
+    
+    current_review = row['polarity_score']
+    
+    if current_review >= 0.05 :
+        row['feedback'] = 1
+
+    elif current_review <= - 0.05 :
+        row['feedback'] = -1
+
+    else :
+        row['feedback'] = 0
+    
+    return row
+	
+
 def assign_cols(df):
 
 	df = df.apply(sentiment_scores, axis = 1)
+
+	df = df.apply(assign_feedback, axis = 1)
+
+	return df
+
+def split_df(df):
 
 	return df
 
@@ -111,6 +123,9 @@ def startpy():
 
 	df = assign_cols(df)
 
+	df = split_df(df)
+
+	df.to_csv('results.csv')
 
 if __name__=='__main__':
 
