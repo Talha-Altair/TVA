@@ -79,11 +79,11 @@ Visit http://localhost:5000 on a Browser to View the App
 
 ## Collaborators
 
-| Username   | Link ↘️                |
-|------------|-----------------------|
-| Talha-Altair | https://github.com/Talha-Altair |
-| vedhasankar | https://github.com/VedhaSankar |
-| sajustsmile | https://github.com/sajustsmile |
+| Name                | Link ↘️                |
+|---------------------|-----------------------|
+| Talha Abdur Rahman  | https://github.com/Talha-Altair |
+| Vedha Sankar        | https://github.com/VedhaSankar |
+| Sandra Ashipala     | https://github.com/sajustsmile |
 
 
 ## License
