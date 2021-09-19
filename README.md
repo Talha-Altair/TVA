@@ -23,8 +23,7 @@ A Web Tool that allows users to View processed and Analyzed User Feedback Data
 
 A Short Video Detailing the Features Implemented in this Application
 
-View the Demo on [Google Drive]([https://drive.google.com/drive/folders/1jap2JqZrqMUH6DmNBICMZNLiq6ZSBQV0?usp=sharing])
-
+View the Demo on YouTube [https://youtu.be/KuDkj9dqLhc]
 
 ## Screenshots
 
@@ -81,10 +80,6 @@ docker pull https://hub.docker.com/repository/docker/talhaabdurrahman/tva
 ## Usage
 
 Visit http://localhost:5000 on a Browser to View the App
-
-## Youtube Link:
-
-https://youtu.be/KuDkj9dqLhc
 
 
 ## Collaborators
