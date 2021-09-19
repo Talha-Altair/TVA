@@ -89,11 +89,13 @@ https://youtu.be/KuDkj9dqLhc
 
 ## Collaborators
 
-| Name                | Link ↘️                          |
-|---------------------|---------------------------------|
-| Talha Abdur Rahman  | https://github.com/Talha-Altair |
-| Vedha Sankar        | https://github.com/VedhaSankar  |
-| Sandra Ashipala     | https://github.com/sajustsmile  |
+
+| Name                          | Link ↘️                          |
+|-------------------------------|---------------------------------|
+| Talha Abdur Rahman            | https://github.com/Talha-Altair |
+| Vedha Sankar                  | https://github.com/VedhaSankar  |
+| Sandra Ashipala               | https://github.com/sajustsmile  |
+| Owen Munyaradzi Mashingaidze  | https://github.com/owenmash19   |
 
 
 ## License
