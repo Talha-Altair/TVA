@@ -72,7 +72,7 @@ python app.py
 ```
 docker-compose up --build
 ```
-**pull image from docker hub**
+**Pull image from docker hub:**
 
 ```
 docker pull https://hub.docker.com/repository/docker/talhaabdurrahman/tva
