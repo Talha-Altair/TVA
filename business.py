@@ -6,6 +6,9 @@ import nltk.data
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
 
 def remove_emojis(data):
 
@@ -115,7 +118,40 @@ def assign_cols(df):
 
 def split_df(df):
 
+	df_negative = df[df['feedback'] == -1]
+
+	df_neutral = df[df['feedback'] == 0]
+
+	df_positive = df[df['feedback'] == 1]
+
+	data = {
+		'df_negative' : df_negative,
+		'df_neutral' : df_neutral,
+		'df_positive' : df_positive,
+	}
+
+	return data
+
+def get_nouns(row):
+
+	content = row['raw_words']
+
+	doc = nlp(content)
+
+	noun_phrases =  [chunk.text for chunk in doc.noun_chunks]
+
+	nouns = " ".join(noun_phrases)
+
+	row['keywords'] = nouns
+
+	return row
+
+def add_noun_chunks(df):
+
+	df = df.apply(get_nouns, axis = 1)
+
 	return df
+
 
 def startpy():
 
@@ -123,7 +159,9 @@ def startpy():
 
 	df = assign_cols(df)
 
-	df = split_df(df)
+	df = add_noun_chunks(df)
+
+	# data = split_df(df)
 
 	df.to_csv('results.csv')
 
