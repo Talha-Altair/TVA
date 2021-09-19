@@ -1,12 +1,5 @@
 #  Team TVA
 
-## Badges
-
-Badges aren't **_necessary_**, but they look nice and also looks more professional so other developers know that you know what you're doing. If you need to find some badges a good place to look is [shields.io](https://shields.io/)
-
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 ## Screenshot / GIF of the application (Demo)
 
 Provide a screenshot or GIF of your application. Using a GIF is generally more pleasing as people can see in real time how the application works.
@@ -19,21 +12,24 @@ Application to view structure and word cloud for feedback of users of an app
 
 ## Table of Contents
 
-* [Demo](#demo)
-* [Tech Stack](#tech-stack)
-* [Features](#features)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Testing](#testing)
-* [Collaborators](#collaborators)
-* [License](#license)
+- [Team TVA](#team-tva)
+  - [Screenshot / GIF of the application (Demo)](#screenshot--gif-of-the-application-demo)
+  - [Application Description](#application-description)
+  - [Table of Contents](#table-of-contents)
+  - [Demo](#demo)
+  - [Technology Stack](#technology-stack)
+  - [Features](#features)
+  - [Running](#running)
+  - [Usage](#usage)
+  - [Collaborators](#collaborators)
+  - [License](#license)
 
 
 ## Demo
 
-Provide links to the deployed application for users to be able to view it easily. If you have any other links you would like to show here, feel free.
+A Short Video Detailing the Features Implemented in this Application
 
-View the application at [Deployed Project Link](Link)
+View the application on [Google Drive](Link)
 
 ## Technology Stack
 
@@ -56,19 +52,11 @@ This is where you want to demonstrate the technologies you used in this project 
 
 If you're application has a wide range of features that you want to showcase and explain you can add them as dot points in this section. This is **optional**.
 
-## Installation
-
-What are the steps required to install your project both locally and for production? Provide a step-by-step description of how to get the development environment running and also how to run this for production.
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots if needed.
-
-## Testing
+## Running
 
 To test the application run the following commands on your terminal:
 
-**Running the application normally:**
+**Running the application locally:**
 
 ```
 pip install -r requirements.txt
@@ -78,9 +66,12 @@ python app.py
 **On docker:**
 
 ```
-sudo docker-compose up --build
+docker-compose up --build
 ```
 
+## Usage
+
+Visit http://localhost:5000 on a Browser to View the App
 
 ## Collaborators
 
@@ -91,8 +82,6 @@ sudo docker-compose up --build
 | sajustsmile | https://github.com/sajustsmile |
 
 
-
-
 ## License
 
-GNU AFFERO GENERAL PUBLIC LICENSE Version 3
+GNU GENERAL PUBLIC LICENSE Version 2, June 1991
