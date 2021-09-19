@@ -1,22 +1,16 @@
 #  Team TVA
 
-## Screenshot / GIF of the application (Demo)
-
-Provide a screenshot or GIF of your application. Using a GIF is generally more pleasing as people can see in real time how the application works.
-
-![Demo Screenshot / GIF](Link)
-
 ## Application Description
 
-Application to view structure and word cloud for feedback of users of an app
+A Web Tool that allows users to View processed and Analyzed User Feedback Data
 
 ## Table of Contents
 
 - [Team TVA](#team-tva)
-  - [Screenshot / GIF of the application (Demo)](#screenshot--gif-of-the-application-demo)
   - [Application Description](#application-description)
   - [Table of Contents](#table-of-contents)
   - [Demo](#demo)
+  - [Screenshots](#screenshots)
   - [Technology Stack](#technology-stack)
   - [Features](#features)
   - [Running](#running)
@@ -29,11 +23,19 @@ Application to view structure and word cloud for feedback of users of an app
 
 A Short Video Detailing the Features Implemented in this Application
 
-View the application on [Google Drive](Link)
+View the Demo on [Google Drive]([https://drive.google.com/drive/folders/1jap2JqZrqMUH6DmNBICMZNLiq6ZSBQV0?usp=sharing])
+
+
+## Screenshots
+
+![alt text](static/screenshots/image1.png "Title")
+![alt text](static/screenshots/image2.png "Title")
+![alt text](static/screenshots/image3.png "Title")
+![alt text](static/screenshots/image4.png "Title")
+
 
 ## Technology Stack
 
-This is where you want to demonstrate the technologies you used in this project and provide any links.
 | Technology | Description                               |
 |------------|-------------------------------------------|
 | HTML5      | Hyper Text Markup Language                |
@@ -50,7 +52,9 @@ This is where you want to demonstrate the technologies you used in this project 
 
 ## Features
 
-If you're application has a wide range of features that you want to showcase and explain you can add them as dot points in this section. This is **optional**.
+1. This Application Allows users to classify and analyze their product feedback.
+2. The scope and scalalibity of this application is huge in the sense that any user can simply change the input data and be able to use the app 
+3. The feedback is segregated on sentiment analysis, word repetition and Natural Language Processing, etc.
 
 ## Running
 
