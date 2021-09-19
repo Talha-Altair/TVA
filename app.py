@@ -2,6 +2,7 @@ from flask import *
 import pandas as pd
 from werkzeug.utils import secure_filename
 import os
+import business
 
 app = Flask(__name__)
 
@@ -77,4 +78,7 @@ def top(state):
     return 'the hell man'
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', debug=True)
+
+    business.process()
+    
+    app.run(host='0.0.0.0', debug=True)
