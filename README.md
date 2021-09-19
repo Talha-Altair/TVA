@@ -23,13 +23,11 @@ Application to view structure and word cloud for feedback of users of an app
 * [Tech Stack](#tech-stack)
 * [Features](#features)
 * [Installation](#installation)
-* [Configuration Setup](#configuration-setup)
 * [Usage](#usage)
 * [Testing](#testing)
 * [Collaborators](#collaborators)
-* [Contributing](#contributing)
 * [License](#license)
-* [Contact Information](#contact-information)
+
 
 ## Demo
 
@@ -97,4 +95,4 @@ sudo docker-compose up --build
 
 ## License
 
-Add information about your license that your project has.
+GNU AFFERO GENERAL PUBLIC LICENSE Version 3
