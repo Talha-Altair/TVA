@@ -35,7 +35,11 @@ def upload_files():
 @app.route('/home')
 def home():
 
-    result = 0
+    content_col = request.values.get('content_col')
+
+    result = {
+        'content_col' : content_col
+    }
 
     return render_template('index.html', result = result)
 
