@@ -3,5 +3,5 @@ pandas
 numpy
 nltk
 vaderSentiment
-spacy
+spacy   
 # python -m spacy download en_core_web_sm

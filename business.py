@@ -7,6 +7,9 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import spacy
+import nltk
+
+nltk.download('stopwords')
 
 nlp = spacy.load("en_core_web_sm")
 
