@@ -58,6 +58,11 @@ def top(state):
 
     return 'the hell man'
 
+@app.route('/download')
+def download():
+
+    return send_file('results.csv', as_attachment=True)
+
 if __name__ == '__main__':
 
     business.process()
