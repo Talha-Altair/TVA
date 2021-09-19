@@ -129,9 +129,15 @@ def split_df(df):
 
 	df_negative = df[df['feedback'] == -1]
 
+	df_negative.to_csv('static/negative.csv')
+
 	df_neutral = df[df['feedback'] == 0]
 
+	df_neutral.to_csv('static/neutral.csv')
+
 	df_positive = df[df['feedback'] == 1]
+
+	df_positive.to_csv('static/positive.csv')
 
 	data = {
 		'df_negative' : df_negative,
@@ -189,7 +195,7 @@ def create_word_clouds(data):
 
 
 
-def startpy():
+def process():
 	
 	df = prepocess()
 
@@ -203,10 +209,10 @@ def startpy():
 
 	df.to_csv('results.csv')
 
-
+	return df
 
 if __name__=='__main__':
 
-	startpy()
+	process()
 
 

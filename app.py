@@ -1,6 +1,8 @@
 from flask import *
+import pandas as pd
 from werkzeug.utils import secure_filename
 import os
+import business
 
 app = Flask(__name__)
 
@@ -24,7 +26,7 @@ def upload_files():
 
     if filename != '' and fileext == 'csv':
 
-        uploaded_file.save(os.path.join(UPLOAD_PATH, filename))
+        uploaded_file.save(os.path.join(UPLOAD_PATH, FILE_NAME))
 
     else:
 
@@ -37,11 +39,37 @@ def home():
 
     content_col = request.values.get('content_col')
 
+    business.process()
+
     result = {
         'content_col' : content_col
     }
 
     return render_template('index.html', result = result)
+
+@app.route('/top/<state>')
+def home(state):
+
+    if state == 'positive':
+
+        df_positive = pd.read_csv('static/positive.csv')
+
+        df_positive = df_positive[:10]
+
+        return render_template('table.html',tables=[df_positive.to_html(classes='female')],
+                titles = ['positive reviews'])
+
+    if state == 'negative':
+
+        df_negative = pd.read_csv('static/negative.csv')
+
+        df_negative = df_negative[:10]
+
+        return render_template('table.html',tables=[df_negative.to_html(classes='male')],
+                titles = ['negative reviews'])
+
+    return 'the hell man'
+
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
