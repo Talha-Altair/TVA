@@ -23,7 +23,7 @@ A Web Tool that allows users to View processed and Analyzed User Feedback Data
 
 A Short Video Detailing the Features Implemented in this Application
 
-View the Demo on YouTube [https://youtu.be/KuDkj9dqLhc]
+View the Demo on YouTube https://youtu.be/KuDkj9dqLhc
 
 ## Screenshots
 
