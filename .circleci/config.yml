@@ -1,0 +1,29 @@
+version: 2.1
+executors:
+  docker-publisher:
+    environment:
+      IMAGE_NAME: talhaabdurrahman/tva
+      IMAGE_TAG: latest
+      BRANCH_NAME: master
+    docker:
+      - image: circleci/buildpack-deps:stretch
+jobs:
+  build:
+    executor: docker-publisher
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build and push Docker image
+          command: |
+            docker build -t $IMAGE_NAME:$IMAGE_TAG .
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS
+            docker push $IMAGE_NAME:$IMAGE_TAG
+workflows:
+  version: 2
+  build-master:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: $BRANCH_NAME
