@@ -3,5 +3,6 @@ pandas
 numpy
 nltk
 vaderSentiment
-spacy
+spacy   
+wordcloud
 # python -m spacy download en_core_web_sm

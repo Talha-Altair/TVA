@@ -8,6 +8,14 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import spacy
+import nltk
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+from PIL import Image
+
+
+# nltk.download('stopwords')
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -153,19 +161,48 @@ def add_noun_chunks(df):
 
 	return df
 
+def create_word_clouds(df, filename):
+
+	text = df.content.tolist() 
+
+	# for content in all_content:
+
+	# text = df[df.content==content]
+
+	# join the list and lowercase all the words
+	text = ' '.join(text).lower()
+
+	#create the wordcloud object
+	wordcloud = WordCloud(stopwords = STOPWORDS,
+							collocations=True).generate(text)
+
+	#plot the wordcloud object
+	plt.imshow(wordcloud, interpolation='bilInear')
+	plt.axis('off')
+	plt.savefig(f"static/{filename}")
+
+
 
 def startpy():
-
+	
 	df = prepocess()
 
 	df = assign_cols(df)
 
 	df = add_noun_chunks(df)
 
-	# data = split_df(df)
+	data = split_df(df)
+
+	create_word_maps(data["df_negative"], "negative")
+	create_word_maps(data["df_neutral"], "neutral")
+	create_word_maps(data["df_positive"], "positive")
 
 	df.to_csv('results.csv')
+
+
 
 if __name__=='__main__':
 
 	startpy()
+
+
