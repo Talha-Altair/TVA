@@ -6,15 +6,13 @@ RUN pip install -r /app/requirements.txt
 
 RUN python -m spacy download en_core_web_sm
 
-ADD business.py /app/business.py
-
-RUN python /app/business.py
-
 EXPOSE 5000
 
 ADD . /app
 
 WORKDIR /app
+
+RUN python business.py
 
 ENTRYPOINT ["python3"]
 

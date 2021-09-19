@@ -44,7 +44,7 @@ def count():
 
     data = {
 
-        "pos": len(df_neutral),
+        "pos": len(df_positive),
         "neg": len(df_negative),
         "neu": len(df_neutral),
 

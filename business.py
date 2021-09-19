@@ -194,8 +194,6 @@ def create_word_clouds(data):
 	create_word_cloud(data["df_neutral"], "neutral")
 	create_word_cloud(data["df_positive"], "positive")
 
-
-
 def process():
 	
 	df = prepocess()
