@@ -2,18 +2,12 @@ from flask import *
 import pandas as pd
 from werkzeug.utils import secure_filename
 import os
-import business
 
 app = Flask(__name__)
 
 UPLOAD_PATH = 'static/'
 
 FILE_NAME = 'user-feedback.csv'
-
-@app.route('/')
-def start():
-
-    return render_template('upload.html')
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
@@ -34,21 +28,13 @@ def upload_files():
 
     return '', 204
 
-@app.route('/home')
+@app.route('/')
 def home():
 
-    content_col = request.values.get('content_col')
-
-    business.process()
-
-    result = {
-        'content_col' : content_col
-    }
-
-    return render_template('index.html', result = result)
+    return render_template('index.html')
 
 @app.route('/top/<state>')
-def home(state):
+def top(state):
 
     if state == 'positive':
 
@@ -69,7 +55,6 @@ def home(state):
                 titles = ['negative reviews'])
 
     return 'the hell man'
-
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)

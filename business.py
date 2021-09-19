@@ -3,7 +3,8 @@ import re
 import string
 import numpy as np
 import nltk.data
-
+import nltk
+nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
