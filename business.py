@@ -161,7 +161,7 @@ def add_noun_chunks(df):
 
 	return df
 
-def create_word_clouds(df, filename):
+def create_word_cloud(df, filename):
 
 	text = df.content.tolist() 
 
@@ -181,6 +181,12 @@ def create_word_clouds(df, filename):
 	plt.axis('off')
 	plt.savefig(f"static/{filename}")
 
+def create_word_clouds(data):
+
+	create_word_cloud(data["df_negative"], "negative")
+	create_word_cloud(data["df_neutral"], "neutral")
+	create_word_cloud(data["df_positive"], "positive")
+
 
 
 def startpy():
@@ -193,9 +199,7 @@ def startpy():
 
 	data = split_df(df)
 
-	create_word_maps(data["df_negative"], "negative")
-	create_word_maps(data["df_neutral"], "neutral")
-	create_word_maps(data["df_positive"], "positive")
+	create_word_clouds(data)
 
 	df.to_csv('results.csv')
 
