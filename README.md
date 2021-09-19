@@ -70,7 +70,7 @@ Provide instructions and examples for use. Include screenshots if needed.
 
 To test the application run the following commands on your terminal:
 
-Running the application normally:
+**Running the application normally:**
 
 ```
 pip install -r requirements.txt
@@ -91,8 +91,6 @@ sudo docker-compose up --build
 | Talha-Altair | https://github.com/Talha-Altair |
 | vedhasankar | https://github.com/VedhaSankar |
 | sajustsmile | https://github.com/sajustsmile |
-| vedhasankar | https://github.com/VedhaSankar |
-| vedhasankar | https://github.com/VedhaSankar |
 
 
 
