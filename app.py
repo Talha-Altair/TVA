@@ -56,7 +56,7 @@ def top(state):
         return render_template('table.html',tables=[df_negative.to_html(classes='male')],
                 titles = ['negative reviews'])
 
-    return 'the hell man'
+    return 'specify state', 501
 
 @app.route('/download')
 def download():
