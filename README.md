@@ -77,13 +77,17 @@ docker-compose up --build
 
 Visit http://localhost:5000 on a Browser to View the App
 
+## Youtube Link:
+
+
+
 ## Collaborators
 
-| Name                | Link ↘️                |
-|---------------------|-----------------------|
+| Name                | Link ↘️                          |
+|---------------------|---------------------------------|
 | Talha Abdur Rahman  | https://github.com/Talha-Altair |
-| Vedha Sankar        | https://github.com/VedhaSankar |
-| Sandra Ashipala     | https://github.com/sajustsmile |
+| Vedha Sankar        | https://github.com/VedhaSankar  |
+| Sandra Ashipala     | https://github.com/sajustsmile  |
 
 
 ## License
