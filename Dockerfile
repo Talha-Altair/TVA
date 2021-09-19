@@ -12,7 +12,7 @@ ADD . /app
 
 WORKDIR /app
 
-RUN python business.py
+RUN python3 business.py
 
 ENTRYPOINT ["python3"]
 
