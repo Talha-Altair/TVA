@@ -20,9 +20,7 @@ jobs:
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS
             docker push $IMAGE_NAME:$IMAGE_TAG
 workflows:
-  build-master:
+  build-and-release:
     jobs:
       - build-master:
-          filters:
-            branches:
-              only: $BRANCH_NAME
+          name: Talha
