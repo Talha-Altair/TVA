@@ -42,7 +42,7 @@ View the Demo on YouTube: https://youtu.be/KuDkj9dqLhc
 | Python     | High Level, Dynamic, Interpreted Language |
 | Docker     | Open source containerization platform     |
 | NLTK       | Text processing library                   |
-| Spacy      | Natural Language Processing               |
+| Spacy      | Natural Language Processing Library       |
 | Pillow     | Python Imaging Library                    |
 | Pandas     | Data Analysis and Manipulation Library    |
 | Numpy      | Data Analysis and Manipulation Library    |
