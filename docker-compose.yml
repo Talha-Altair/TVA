@@ -7,6 +7,9 @@ services:
     build: .
 
     hostname: web
+
+    volumes:
+      - .:/app
     
     ports:
       - "5000:5000"

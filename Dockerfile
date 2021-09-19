@@ -6,7 +6,9 @@ RUN pip install -r /app/requirements.txt
 
 RUN python -m spacy download en_core_web_sm
 
-RUN python business.py
+ADD business.py /app/business.py
+
+RUN python /app/business.py
 
 EXPOSE 5000
 

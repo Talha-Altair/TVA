@@ -33,6 +33,26 @@ def home():
 
     return render_template('index.html')
 
+@app.route('/count')
+def count():
+
+    df_positive = pd.read_csv('static/positive.csv')
+
+    df_neutral = pd.read_csv('static/neutral.csv')
+
+    df_negative = pd.read_csv('static/negative.csv')
+
+    data = {
+
+        "pos": len(df_neutral),
+        "neg": len(df_negative),
+        "neu": len(df_neutral),
+
+    }
+
+    return render_template('count.html', data = data)
+
+
 @app.route('/top/<state>')
 def top(state):
 
