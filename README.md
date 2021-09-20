@@ -1,5 +1,7 @@
 #  Team TVA
 
+[![publish](https://github.com/Talha-Altair/TVA/actions/workflows/publish.yml/badge.svg)](https://github.com/Talha-Altair/TVA/actions/workflows/publish.yml)
+
 ## Application Description
 
 A Web Tool that allows users to View processed and Analyzed User Feedback Data
