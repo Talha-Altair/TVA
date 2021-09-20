@@ -5,7 +5,6 @@ executors:
       IMAGE_NAME: talhaabdurrahman/tva
       IMAGE_TAG: latest
       BRANCH_NAME: master
-      GH_NAME: Talha-Altair
     docker:
       - image: circleci/buildpack-deps:stretch
 jobs:
@@ -20,19 +19,8 @@ jobs:
             docker build -t $IMAGE_NAME:$IMAGE_TAG .
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASS
             docker push $IMAGE_NAME:$IMAGE_TAG
-  build-ghcr:
-    executor: docker-publisher
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Build and push Docker image
-          command: |
-            docker build -t $IMAGE_NAME:$IMAGE_TAG .
-            echo $CR_PAT | docker login ghcr.io -u $GH_NAME --password-stdin
-            docker push ghcr.io/$GH_NAME/$IMAGE_NAME:$IMAGE_TAG
 workflows:
   build-and-release:
     jobs:
-      - build-ghcr:
+      - build-dockerhub:
           name: Talha

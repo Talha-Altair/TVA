@@ -1,5 +1,7 @@
 FROM python:3.9.4-slim-buster
 
+LABEL org.opencontainers.image.source="https://github.com/Talha-Altair/TVA"
+
 ADD requirements.txt /app/requirements.txt
 
 RUN pip install -r /app/requirements.txt
