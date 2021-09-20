@@ -1,6 +1,6 @@
 FROM python:3.9.4-slim-buster
 
-LABEL org.opencontainers.image.source="https://github.com/Talha-Altair/TVA"
+LABEL org.opencontainers.image.source="https://github.com/talha-altair/tva"
 
 ADD requirements.txt /app/requirements.txt
 

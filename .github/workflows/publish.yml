@@ -19,4 +19,4 @@ jobs:
     - name: Build the tva Docker image
       run: |
         docker build . --tag ghcr.io/talha-altair/tva:latest
-        docker push ghcr.io/jonashackt/tva:latest
+        docker push ghcr.io/talha-altair/tva:latest
